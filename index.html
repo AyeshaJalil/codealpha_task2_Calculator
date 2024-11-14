@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Calculator</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="utils.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background-color: #222;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .calculator-wrapper {
+      background-color: #333;
+      border-radius: 15px;
+      padding: 20px;
+      width: 350px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2em;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .display {
+      text-align: right;
+      font-size: 1.5em;
+      background-color: #111;
+      color: #ffcc00; /* Updated text color */
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .result {
+      text-align: right;
+      background-color: #222;
+      color: #ffcc00; /* Updated text color */
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .btn-group, .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .btn, .opr, .eql {
+      padding: 15px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .opr {
+      background-color: #555;
+      color: #ffcc00;
+    }
+
+    .num {
+      background-color: #444;
+      color: #eee;
+    }
+
+    .eql {
+      background-color: #ff6600;
+      color: white;
+    }
+
+    .btn:hover, .opr:hover, .eql:hover {
+      background-color: #666;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #ffcc00;
+      width: 100%;
+    }
+
+    .footer a {
+      color: #ff6600;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calculator-wrapper">
+    <h1 class="title">Custom Calculator</h1>
+
+    <div class="display">
+      <input id="screen" name="result" type="text" placeholder="0" style="background: transparent; border: none; width: 100%; outline: none; color: #ffcc00;">
+    </div>
+
+    <div class="result">
+      <input id="results" name="results" type="text" placeholder="Answer" disabled style="background: transparent; border: none; width: 100%; outline: none; color: #ffcc00;">
+    </div>
+
+    <!-- Operator and Function Buttons -->
+    <div class="btn-group">
+      <button id="ce" class="opr" type="button">CE</button>
+      <button class="opr" type="button">X!</button>
+      <button class="opr" type="button">(</button>
+      <button class="opr" type="button">)</button>
+      <button class="opr" type="button">C</button>
+      <button class="opr" type="button">%</button>
+      <button class="opr" type="button">M+</button>
+      <button class="opr" type="button">M-</button>
+    </div>
+
+    <!-- Numerical and Function Buttons Layout -->
+    <div class="row">
+      <button class="btn">9</button>
+      <button class="opr">sin</button>
+      <button class="opr">cos</button>
+      <button class="opr">tan</button>
+    </div>
+    <div class="row">
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+    </div>
+    <div class="row">
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="opr">+</button>
+    </div>
+    <div class="row">
+      <button class="opr">e</button>
+      <button class="opr">^</button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="eql" onclick="screen.value=eval(screen.value)">=</button>
+      <button class="opr">-</button>
+      <button class="opr">*</button>
+      <button class="opr">/</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      Connect with us on:
+      <a href="https://www.youtube.com/@pixelpappilon165" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+      <a href="https://github.com/Ctoic" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://c3akademia.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://www.instagram.com/pixelpappilon165" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <a href="https://twitter.com/AyeshaSaif" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
